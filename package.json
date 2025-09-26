@@ -1,0 +1,16 @@
+{
+  "name": "daria-attest",
+  "version": "1.0.0",
+  "description": "Standalone attestation verification service with admin panel",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "asn1.js": "^5.4.1",
+    "express": "^4.19.2",
+    "node-forge": "^1.3.1"
+  }
+}

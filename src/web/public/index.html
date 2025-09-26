@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <title>dariaAttest Admin</title>
+</head>
+<body>
+    <main>
+        <h1 id="app-title">dariaAttest</h1>
+        <section id="login-section">
+            <h2>Admin Login</h2>
+            <form id="login-form">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required />
+                <button type="submit">Sign In</button>
+            </form>
+        </section>
+
+        <section id="password-section" class="hidden">
+            <h2>Change Password</h2>
+            <form id="password-form">
+                <label for="current-password">Current Password</label>
+                <input type="password" id="current-password" required />
+                <label for="new-password">New Password</label>
+                <input type="password" id="new-password" minlength="8" required />
+                <button type="submit">Update Password</button>
+            </form>
+        </section>
+
+        <section id="keys-section" class="hidden">
+            <div class="flex">
+                <button id="create-key-btn">Create API Key</button>
+                <button id="logout-btn" class="secondary">Sign Out</button>
+            </div>
+            <table id="keys-table">
+                <thead>
+                    <tr>
+                        <th>Label</th>
+                        <th>Preview</th>
+                        <th>Active</th>
+                        <th id="created-header">Created</th>
+                        <th id="last-used-header">Last Used</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="new-key-section" class="hidden">
+            <h2>New API Key</h2>
+            <p id="new-key-value" class="badge"></p>
+            <button id="close-new-key" class="secondary">Close</button>
+        </section>
+
+        <div id="modal-backdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+            <div class="modal">
+                <h3>Create API Key</h3>
+                <form id="create-key-form">
+                    <label for="create-key-label">Label</label>
+                    <input type="text" id="create-key-label" maxlength="120" autocomplete="off" required />
+                    <p id="create-key-error" class="modal-error hidden"></p>
+                    <div class="modal-actions">
+                        <button type="button" id="create-key-cancel" class="secondary">Cancel</button>
+                        <button type="submit">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div id="alerts" class="alert-stack hidden"></div>
+    <script src="assets/app.js"></script>
+</body>
+</html>
